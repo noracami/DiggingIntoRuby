@@ -8,7 +8,7 @@ module ShareHub
     def initialize(name:)
       @name = name
       @approve = false
-      @category = 'common'
+      @category ||= 'common'
       @comments = []
     end
 

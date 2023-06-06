@@ -1,5 +1,9 @@
+require 'serial'
+
 module ShareHub
   class Topic
+    include ShareHub::Serial
+
     attr_accessor *%i[name approve category comments]
     def initialize(name:)
       @name = name
@@ -17,12 +21,7 @@ module ShareHub
     end
 
     def list_comments
-      @comments.map.with_index do |comment, idx|
-        {
-          content: comment,
-          no: idx+1
-        }
-      end
+      my_list_comments(@comments)
     end
   end
 end

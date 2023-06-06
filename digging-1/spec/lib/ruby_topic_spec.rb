@@ -20,10 +20,10 @@ RSpec.describe ShareHub::RubyTopic do
   end
 
   describe 'about class' do
-    xit 'class and superclass' do
-      expect(topic.class).to eq
-      expect(topic.class.superclass).to eq
-      expect(topic.class.class).to eq
+    it 'class and superclass' do
+      expect(topic.class).to eq ShareHub::RubyTopic
+      expect(topic.class.superclass).to eq ShareHub::Topic
+      expect(topic.class.class).to eq Class
     end
   end
 
